@@ -54,10 +54,10 @@ python app.py
 ## 🔍 Preview
 
 ### Chatbot Interface
-![Chatbot UI](screenshots/chatbot.png)
+![Chatbot UI](screenshot/chatbot.png)
 
 ### Fine Prints Summary Page
-![Summary UI](screenshots/summary.png)
+![Summary UI](screenshot/summary.png)
 
 
 ## Author
