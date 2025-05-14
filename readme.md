@@ -51,6 +51,14 @@ python app.py
 - `chat_response.txt` — Responses to sample questions using `/chat`
 - `fine_prints.txt` — Output from `/fine-prints` endpoint
 ---
+## 🔍 Preview
+
+### Chatbot Interface
+![Chatbot UI](screenshots/chatbot.png)
+
+### Fine Prints Summary Page
+![Summary UI](screenshots/summary.png)
+
 
 ## Author
 Built by Nairutya Patel as part of the Hobglobin AI take-home assessment.
