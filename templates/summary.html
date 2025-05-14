@@ -1,0 +1,78 @@
+<!-- templates/summary.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Summary</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f2f4f8, #cdddf0);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .summary-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      width: 750px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      align-self: center;
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    #output {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+      overflow-y: auto;
+      flex: 1;
+      border: 1px solid #ddd;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="summary-container">
+    <h2>PDF Summary</h2>
+    <button onclick="fetchSummary()">Get Summary</button>
+    <div id="output">Summary will appear here.</div>
+  </div>
+
+  <script>
+    async function fetchSummary() {
+      const res = await fetch('/fine-prints');
+      const data = await res.json();
+      document.getElementById('output').innerHTML = marked.parse(data.fine_prints || "No summary available.");
+    }
+  </script>
+</body>
+</html>

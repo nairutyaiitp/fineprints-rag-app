@@ -1,0 +1,139 @@
+<!-- templates/chatbot.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatBot Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #d9e4f5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .chat-container {
+      width: 100%;
+      max-width: 600px;
+      height: 80vh;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-header {
+      padding: 20px;
+      background-color: #e77212;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .chat-log {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background: #f7f7f7;
+    }
+    .chat-message {
+      margin-bottom: 15px;
+    }
+    .chat-message.user {
+      text-align: right;
+    }
+    .chat-bubble {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 20px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .chat-message.user .chat-bubble {
+      background-color: #e77212;
+      color: white;
+      border-bottom-right-radius: 0;
+    }
+    .chat-message.bot .chat-bubble {
+      background-color: #e0e0e0;
+      color: #333;
+      border-bottom-left-radius: 0;
+    }
+    .chat-input-area {
+      display: flex;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+      background: #fff;
+    }
+    #query {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+    button {
+      margin-left: 10px;
+      background-color: #e77212;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c9610f;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Chat with Assistant</div>
+    <div id="chat-log" class="chat-log"></div>
+    <div class="chat-input-area">
+      <input type="text" id="query" placeholder="Type your question here..." />
+      <button onclick="sendQuery()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    async function sendQuery() {
+      const input = document.getElementById('query');
+      const query = input.value.trim();
+      if (!query) return;
+
+      appendMessage('user', query);
+      input.value = '';
+
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query })
+      });
+      const data = await res.json();
+
+      appendMessage('bot', marked.parse(data.response || 'No answer available.'));
+    }
+
+    function appendMessage(sender, text) {
+      const log = document.getElementById('chat-log');
+      const msg = document.createElement('div');
+      msg.className = 'chat-message ' + sender;
+      const bubble = document.createElement('div');
+      bubble.className = 'chat-bubble';
+      bubble.innerHTML = text;
+      msg.appendChild(bubble);
+      log.appendChild(msg);
+      log.scrollTop = log.scrollHeight;
+    }
+  </script>
+</body>
+</html>

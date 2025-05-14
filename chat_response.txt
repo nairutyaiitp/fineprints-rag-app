@@ -1,0 +1,34 @@
+%---------------------------------------------------------%
+Question 1: List all mandatory documents bidders must submit.
+Responce: 
+Based on the provided text, the mandatory documents bidders must submit are:
+
+Attachment 1 - Bid Proposal (ADM-1412)
+Attachment 2 - Bid/Bidder Certification Sheet
+Bidder Declaration (GSPD 05-105)
+Bidder’s Bond (ADM-2010)
+Disabled Veteran Business Enterprise Declarations (STD 843)
+Quotes from DVBE Subcontractors (on DVBE’s letterhead)
+Non-Collusion Declaration for Public Works
+California Civil Rights Laws Certification (DOT ADM-0076)
+Note that while a Contractor's License is required, Caltrans will verify it and a copy does not need to be submitted by the bidder.
+
+%---------------------------------------------------------%
+Question 2 : What are the security requirements and site access protocols for the project IFPQ # 01A6494?
+Responce:
+The provided text does not specify security requirements or site access protocols for the project. 
+It mentions that a duly authorized representative of the Federal government will have access to Contractor’s books, records, and documents for audits, but this does not describe site access.
+
+%---------------------------------------------------------%
+Question 3 : What permits or approvals are necessary for this project?
+Responce:
+Based on the provided text, the contractor is responsible for obtaining and paying for all permits, licenses, registrations, and certificates required by local ordinances applicable to the agreement and its Exhibit A, Scope of Work. 
+Additionally, while building permits aren't required for work on State-owned properties, the work is subject to inspection by local agency code enforcement. 
+Many properties are covered under the National Historic Preservation Act, Section 106 (16 USC, 470) and/or other Federal, State, or Local criteria requiring strict approval of proposed work and materials. 
+The contractor must also obtain Department of Industrial Relations registration.
+
+%---------------------------------------------------------%
+Question 4: 
+The provided text mentions safety precautions related to environmental health hazards (Exhibit D, Section 14). 
+The contractor assumes all risks related to exposure to such hazards for employees, subcontractors, and others involved in the project. 
+The contractor also agrees to take all appropriate safety precautions. However, there is no information about past experience addressing specific safety challenges.
