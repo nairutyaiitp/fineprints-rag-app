@@ -61,6 +61,6 @@ python app.py
 
 
 ## Author
-Built by Nairutya Patel as part of the Hobglobin AI take-home assessment.
+Built by Nairutya Patel.
 
 ---
