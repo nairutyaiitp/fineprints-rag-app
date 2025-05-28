@@ -1,4 +1,4 @@
-# Project Proposal Assistant (Hobglobin Take-Home Assignment)
+# Project Proposal Assistant :
 
 This is a lightweight, production-style MVP designed to help users **generate project proposal summaries** and **interactively query PDF documents** using a Retrieval-Augmented Generation (RAG) pipeline powered by the **Gemini API**.
 
